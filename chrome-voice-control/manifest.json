@@ -1,0 +1,31 @@
+{
+  "name": "Chrome Voice Control",
+  "version": "4.2.6",
+  "description": "Uses speech recognition to execute commands in Google Chrome",
+  "background_page":"background.html",
+  "browser_action" :
+  {
+    "default_icon" : "vc.png",
+	"default_title" : "Speak Action",
+	"default_popup" : "options.html"
+  },
+  "content_scripts": [
+   {
+	"matches":["<all_urls>"],
+	"run_at":"document_start",
+	"js":["jquery-1.5.2.min.js", "jquery.simplemodal.1.4.1.min.js", "shortcuts.backup.js"]
+   }
+  ],
+  "permissions" : [
+    "tabs",
+	"windows",
+	"history",
+	"management",
+	"cookies",
+	"https://*/*",
+	"http://*/*"
+  ],
+  "icons" : {
+
+  }
+}
